@@ -1,14 +1,15 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #F5F5DC; /* Light Beige */
+    color: #333; /* Darker Text */
+    text-align: center;
 }
 
 header {
-    background-color: #2C5F2D;
+    background-color: #800000; /* Maroon */
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -18,17 +19,17 @@ header .logo h1 {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
+    text-transform: uppercase;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
@@ -41,7 +42,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #97BC62;
+    color: #F5F5DC; /* Light Beige */
 }
 
 .main-container {
@@ -49,26 +50,42 @@ nav ul li a:hover {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-image.jpg') no-repeat center center/cover;
+    background: url('hero-pattern.jpg') no-repeat center center/cover; /* Military Pattern */
     color: white;
     text-align: center;
     padding: 100px 20px;
     border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 0, 0, 0.7); /* Maroon Overlay */
+    z-index: -1;
 }
 
 .hero h2 {
     margin: 0;
     font-size: 2.5em;
     font-family: 'Montserrat', sans-serif;
+    animation: fadeIn 1s ease-out;
 }
 
 .hero p {
     font-size: 1.2em;
     margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
 }
 
 .cta-button {
-    background-color: #97BC62;
+    background-color: #6B8E23; /* Olive Drab */
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -76,10 +93,7 @@ nav ul li a:hover {
     font-family: 'Montserrat', sans-serif;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button:hover {
-    background-color: #2C5F2D;
+    animation: fadeIn 2s ease-out;
 }
 
 .services-overview, .about-us, .services, .contact-us, .testimonials {
@@ -88,46 +102,47 @@ nav ul li a:hover {
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .services-overview h3, .about-us h2, .services h2, .contact-us h2, .testimonials h2 {
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
+    color: #800000; /* Maroon */
 }
 
-.service {
+.service, .about-us-text, .testimonial-text {
     margin: 20px 0;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #97BC62;
+    background-color: #F5F5DC; /* Light Beige */
+    border: 1px solid #6B8E23; /* Olive Drab */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover, .testimonial-text:hover, .about-us-text:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 footer {
-    background-color: #2C5F2D;
+    background-color: #800000; /* Maroon */
     color: white;
     text-align: center;
     padding: 20px 0;
-    border-top: 5px solid #97BC62;
-}
-
-footer .social-media {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0 0;
-    text-align: center;
-}
-
-footer .social-media li {
-    display: inline;
-    margin: 0 10px;
-}
-
-footer .social-media li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    border-top: 5px solid #6B8E23; /* Olive Drab */
 }
 
 footer .social-media li a:hover {
-    color: #97BC62;
+    color: #F5F5DC; /* Light Beige */
+    transform: scale(1.2);
+    transition: transform 0.3s, color 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
