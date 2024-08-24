@@ -1,6 +1,9 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('nav ul');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
 
-navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
