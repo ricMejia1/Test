@@ -1,12 +1,14 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
-    background-color: #3c6e71;
+    background-color: #2C5F2D;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -14,6 +16,8 @@ header {
 
 header .logo h1 {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
 }
 
 nav ul {
@@ -31,22 +35,31 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-main {
+nav ul li a:hover {
+    color: #97BC62;
+}
+
+.main-container {
     padding: 20px;
 }
 
 .hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-image.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 100px 20px;
+    border-radius: 8px;
 }
 
 .hero h2 {
     margin: 0;
     font-size: 2.5em;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .hero p {
@@ -55,33 +68,46 @@ main {
 }
 
 .cta-button {
-    background-color: #3c6e71;
+    background-color: #97BC62;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.services-overview, .about-us, .services, .contact-us {
+.cta-button:hover {
+    background-color: #2C5F2D;
+}
+
+.services-overview, .about-us, .services, .contact-us, .testimonials {
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.services-overview h3, .about-us h2, .services h2, .contact-us h2 {
+.services-overview h3, .about-us h2, .services h2, .contact-us h2, .testimonials h2 {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .service {
     margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #97BC62;
 }
 
 footer {
-    background-color: #3c6e71;
+    background-color: #2C5F2D;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
+    border-top: 5px solid #97BC62;
 }
 
 footer .social-media {
@@ -99,34 +125,9 @@ footer .social-media li {
 footer .social-media li a {
     color: white;
     text-decoration: none;
-}
-.nav-toggle {
-    display: none;
-    background-color: #3c6e71;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-        margin: 10px auto;
-    }
-
-    nav ul {
-        display: none;
-        text-align: left;
-        padding: 0;
-    }
-
-    nav ul.show {
-        display: block;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
+footer .social-media li a:hover {
+    color: #97BC62;
 }
