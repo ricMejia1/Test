@@ -100,3 +100,33 @@ footer .social-media li a {
     color: white;
     text-decoration: none;
 }
+.nav-toggle {
+    display: none;
+    background-color: #3c6e71;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        margin: 10px auto;
+    }
+
+    nav ul {
+        display: none;
+        text-align: left;
+        padding: 0;
+    }
+
+    nav ul.show {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
